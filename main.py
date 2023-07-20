@@ -28,10 +28,3 @@ def send_message(message):
 
 if __name__ == "__main__":
     bot.polling()
-
-
-def parse_url(url):
-    r = requests.get(url)
-    soup = b(r.text, 'html.parser')
-    anekdots = soup.find_all('div', class_='text')
-    return ([c.text for c in anekdots])
